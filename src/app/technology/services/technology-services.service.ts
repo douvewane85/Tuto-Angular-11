@@ -27,8 +27,15 @@ export class TechnologyService {
      return (this.techologies.find(techno=>techno.id==id)) ;
 
   }
+
+  getTechnologieByType(id:number):Technology[]{
+    return this.techologies.filter(techno=>techno.type.id==id) ;
+
+ }
   addTechnologies(techno:Technology){
     techno.id=++TechnologyService.nbreTechno;
+    console.log(techno)
     this.techologies=[techno, ...this.techologies];
+
   }
 }

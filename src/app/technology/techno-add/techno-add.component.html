@@ -57,7 +57,7 @@
                 required >
                     <option></option>
 
-                   <option *ngFor="let type of types" [value]="type">{{type.libelle}}</option>
+                   <option *ngFor="let type of types" [ngValue]="type">{{type.libelle}}</option>
                 </select>
                   <small id="" 
                   *ngIf="type.invalid &&

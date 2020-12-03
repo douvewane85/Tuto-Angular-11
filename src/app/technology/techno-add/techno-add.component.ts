@@ -9,23 +9,27 @@ import { TechnologyService } from '../services/technology-services.service';
   styleUrls: ['./techno-add.component.scss']
 })
 export class TechnoAddComponent implements OnInit {
-  formData:Technology= 
-  {
-    id:0,
-   libelle:"",
-   description:"",
-  type:null
-  }
+  formData:Technology;
+  
   types:TypeTechnology[]
   constructor(private technoService:TechnologyService) { }
 
   ngOnInit(): void {
      this.types=this.technoService.getTypeTechnologies();
+     this.formData=this.initData()
   }
   handleAdd(form:any){
       this.technoService.addTechnologies(this.formData);
-      form.reset()
       
+      
+  }
+  private initData():Technology{
+    return {
+      id:0,
+     libelle:"",
+     description:"",
+     type:null
+    }
   }
 
 }

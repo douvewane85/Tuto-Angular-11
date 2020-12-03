@@ -1,4 +1,4 @@
 export interface TypeTechnology {
-    id:number,
+    id?:number,
     libelle:string
 }
