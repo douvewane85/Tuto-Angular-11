@@ -22,8 +22,10 @@ export class TechnoAddComponent implements OnInit {
   ngOnInit(): void {
      this.types=this.technoService.getTypeTechnologies();
   }
-  handleAdd(){
+  handleAdd(form:any){
       this.technoService.addTechnologies(this.formData);
+      form.reset()
+      
   }
 
 }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { TechnologyService } from '../services/technology-services.service';
+import { Technology } from '../models/technology';
 
 @Component({
   selector: 'app-techno-list',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TechnoListComponent implements OnInit {
 
-  constructor() { }
 
+  constructor(private technoService:TechnologyService) { }
+  technos:Technology[];
   ngOnInit(): void {
+      this.technos=this.technoService.getTechnologies(); 
   }
 
+  
 }

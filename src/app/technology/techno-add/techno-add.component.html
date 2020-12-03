@@ -2,7 +2,7 @@
 
 <div class="container">
     <h1 class="display-5  my-2 ml-5  justify-content-center">  Enregistrement d'une Techonologie</h1>
-    <form #addTechnologyForm="ngForm">
+    <form #addTechnologyForm="ngForm"  (submit)="handleAdd(addTechnologyForm)">
         <div class="form-group row">
             <label for="inputName" class="col-sm-2 col-form-label">Libelle</label>
             <div class="col-sm-6">
@@ -75,10 +75,10 @@
 
         <div class="form-group row ">
             <div class="offset-sm-7 ">
-                <button type="submit" 
+                <button type="submit"
                 class="btn btn-primary"
                 [disabled] = "!addTechnologyForm.form.valid"
-                (click)="handleAdd()">
+               >
                   Add
                </button>
             </div>

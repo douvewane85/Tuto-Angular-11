@@ -15,7 +15,11 @@ pathMatch: 'prefix'ou full
   <router-outlet  name="outlet1"></router-outlet>
 
 //Route avec Parametre
-{ path:  'contacts/:id', component:  ContactDetailComponent}
+ //Router
+     { path:  'contacts/:id', component:  ContactDetailComponent}
+ //Dans TS
+
+ //Dans View
 
 
 //Gard de Route

@@ -1,0 +1,21 @@
+
+    <img class="card-img-top" src="holder.js/100x180/" alt="">
+    <div class="card-body">
+        <h5 class="card-title ">{{techno.libelle}}</h5>
+        <p class="card-text">{{techno.description.substr(1, this.sizeDescription)}}</p>
+    </div>
+    <div class="row" [hidden]="hiddenBtn">
+        <div class="col-sm-5">
+            <a name="" id="" class="btn btn-warning float-left"
+            [routerLink]="['/detail-technology', techno.id]"
+             href="#" role="button">
+             Edit</a>
+        </div>
+        <div class="col-sm-5">
+            <a name="" id="" class="btn btn-danger  float-right mx-5 my-1" href="#" role="button">Delete</a>
+        </div>
+       
+       
+       
+    </div>
+

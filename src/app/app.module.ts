@@ -11,6 +11,7 @@ import { NavComponent } from './technology/ui/nav/nav.component';
 import { TechnologyRoutingModule } from './technology/technology-routing.module';
 import { PageNotFoundComponent } from './technology/ui/page-not-found/page-not-found.component';
 import { FormsModule } from '@angular/forms';
+import { TechnoComponent } from './share/techno/techno.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     TechnoAddComponent,
     TechnoDetailsListComponent,
     NavComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    TechnoComponent
   ],
   imports: [
     BrowserModule,

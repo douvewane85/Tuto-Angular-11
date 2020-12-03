@@ -23,6 +23,10 @@ export class TechnologyService {
   getTechnologies():Technology[]{
     return this.techologies;
   }
+  getTechnologieById(id:number):Technology{
+     return (this.techologies.find(techno=>techno.id==id)) ;
+
+  }
   addTechnologies(techno:Technology){
     techno.id=++TechnologyService.nbreTechno;
     this.techologies=[techno, ...this.techologies];

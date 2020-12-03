@@ -1,1 +1,9 @@
-<p class="mx-3">Liste des Techologies</p>
+<div class="container">
+    <div class="row ">
+        <div class="card col-sm-5 mx-1 my-1 w-50"  
+         *ngFor="let techno of technos">
+               <app-techno [techno]="techno">
+           </app-techno>
+        </div>
+    </div>
+</div>

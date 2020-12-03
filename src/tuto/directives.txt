@@ -1,0 +1,20 @@
+Directives Structurelles
+NgForOf  fournit des valeurs exportées qui peuvent être associées à des variables locales.
+
+Les valeurs exportées suivantes peuvent être associées à des variables locales.
+
+$implicit: T: La valeur de tous les éléments individuels dans l'itérable ( ngForOf).
+ngForOf: NgIterable<T>: La valeur d'une expression itérable. 
+Utile lorsque l'expression est plus compliquée que l'accès aux propriétés, par exemple lors de l'utilisation du tube asynchrone ( userStreams | async).
+index: number: Un index de l'élément actuel dans l'itérable.
+first: boolean: Vrai lorsqu'un élément est le premier élément de l'itérable.
+last: boolean: Vrai lorsqu'un élément est le dernier élément de l'itérable.
+even: boolean: Vrai lorsqu'un élément a un index pair dans l'itérable.
+odd: boolean: Vrai quand un élément a un index impair dans l'itérable.
+Exemple:
+
+*ngFor="let character of characters; 
+                  let i = index;
+                  let even = even; 
+                  let odd = odd"
+                  [ngClass]="{ odd: odd, even: even }"
