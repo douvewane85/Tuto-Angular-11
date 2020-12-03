@@ -7,14 +7,14 @@
                         [(ngModel)]="typeSelected"
                         (change)="handleGetTechnoByType()"
                         >
-                        <option [value]="0"></option>
+                        <option [value]="0" selected></option>
                         <option *ngFor="let type of types" [value]="type.id">{{type.libelle}}</option>
                 </select>
             </div>
      </div>
     <div class="row ">
         <div class="card col-sm-5 mx-1 my-1 w-50"  
-         *ngFor="let techno of technos">
+         *ngFor="let techno of (technos|myPipe:typeSelected)">
                <app-techno [techno]="techno">
            </app-techno>
         </div>

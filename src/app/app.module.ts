@@ -12,6 +12,7 @@ import { TechnologyRoutingModule } from './technology/technology-routing.module'
 import { PageNotFoundComponent } from './technology/ui/page-not-found/page-not-found.component';
 import { FormsModule } from '@angular/forms';
 import { TechnoComponent } from './share/techno/techno.component';
+import { MyPipePipe } from './technology/pipe/my-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TechnoComponent } from './share/techno/techno.component';
     TechnoDetailsListComponent,
     NavComponent,
     PageNotFoundComponent,
-    TechnoComponent
+    TechnoComponent,
+    MyPipePipe
   ],
   imports: [
     BrowserModule,

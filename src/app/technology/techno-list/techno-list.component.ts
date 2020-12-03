@@ -14,20 +14,23 @@ export class TechnoListComponent implements OnInit {
   constructor(private technoService:TechnologyService) { }
   technos:Technology[];
   types:TypeTechnology[]
-  typeSelected:number
+  typeSelected:number=0
   ngOnInit(): void {
       this.technos=this.technoService.getTechnologies(); 
       this.types=this.technoService.getTypeTechnologies();
   }
 
   handleGetTechnoByType(){
-   
-    if(this.typeSelected!=0){
-      this.technos=this.technoService.getTechnologieByType(this.typeSelected)
-      
-    }else{
+   /*
+        Filtre sans Pipe
+        if(this.typeSelected!=0){
+           this.technos=this.technoService.getTechnologieByType(this.typeSelected)
+ 
+        }else{
       this.technos=this.technoService.getTechnologies(); 
     }
+   */
+    
    
   }
 }
