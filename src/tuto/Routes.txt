@@ -1,0 +1,22 @@
+Génération de Route 
+ng generate module app-routing --flat --module=app
+//Path
+{ path: "contacts", pathMatch: 'prefix',component: ContactListComponent }
+pathMatch: 'prefix'ou full
+//Vue
+<router-outlet></router-outlet>
+//Lien 
+<a [routerLink]="'/contacts'">Contacts</a>
+
+
+//Multiple Route
+  { path: "contacts", component: ContactListComponent, outlet: "outlet1" } 
+  Vue 
+  <router-outlet  name="outlet1"></router-outlet>
+
+//Route avec Parametre
+{ path:  'contacts/:id', component:  ContactDetailComponent}
+
+
+//Gard de Route
+{ path:  'contacts/:id, canActivate:[MyGuard], component:  ContactDetailComponent}
