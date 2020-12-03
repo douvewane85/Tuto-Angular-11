@@ -34,8 +34,10 @@ export class TechnologyService {
  }
   addTechnologies(techno:Technology){
     techno.id=++TechnologyService.nbreTechno;
-    console.log(techno)
     this.techologies=[techno, ...this.techologies];
 
+  }
+  deleteTechnologies(id:number):Technology[]{
+    return this.techologies=[... this.techologies.filter(techno=>techno.id!=id)] ;
   }
 }

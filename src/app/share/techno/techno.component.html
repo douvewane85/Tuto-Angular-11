@@ -8,11 +8,13 @@
         <div class="col-sm-5">
             <a name="" id="" class="btn btn-warning float-left"
             [routerLink]="['/detail-technology', techno.id]"
-             href="#" role="button">
+             href="#"  role="button">
              Edit</a>
         </div>
         <div class="col-sm-5">
-            <a name="" id="" class="btn btn-danger  float-right mx-5 my-1" href="#" role="button">Delete</a>
+            <button name="" id=""  class="btn btn-danger  float-right mx-5 my-1" href="#" role="button"
+            (click)="handleDelete()"
+            >Delete</button>
         </div>
        
        

@@ -33,4 +33,8 @@ export class TechnoListComponent implements OnInit {
     
    
   }
+
+  delete(techno:Technology){
+    this.technos=this.technoService.deleteTechnologies(techno.id)
+  }
 }

@@ -15,7 +15,7 @@
     <div class="row ">
         <div class="card col-sm-5 mx-1 my-1 w-50"  
          *ngFor="let techno of (technos|myPipe:typeSelected)">
-               <app-techno [techno]="techno">
+               <app-techno [techno]="techno" (technoDelete)="delete($event)">
            </app-techno>
         </div>
     </div>
