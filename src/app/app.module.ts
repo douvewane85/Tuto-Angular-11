@@ -10,6 +10,7 @@ import { TechnoDetailsListComponent } from './technology/techno-details-list/tec
 import { NavComponent } from './technology/ui/nav/nav.component';
 import { TechnologyRoutingModule } from './technology/technology-routing.module';
 import { PageNotFoundComponent } from './technology/ui/page-not-found/page-not-found.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PageNotFoundComponent } from './technology/ui/page-not-found/page-not-f
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TechnologyRoutingModule
+    TechnologyRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

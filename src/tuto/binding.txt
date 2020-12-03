@@ -1,0 +1,58 @@
+Binding
+OneWayBinding  
+     L'interpolation de chaîne est une technique de liaison de données 
+     unidirectionnelle qui est utilisée pour sortir les données d'un code 
+     TypeScript vers un modèle HTML (vue). Il utilise l'expression 
+     de modèle entre doubles accolades pour afficher les données du 
+     composant vers la vue.
+     Par exemple:
+     Fichier  typeScript              Html           
+        data:type                  {{ data }}:interpollation
+
+Property Binding
+La liaison de propriété est également une technique de 
+liaison de données unidirectionnelle . 
+Dans la liaison de propriété, nous lions une propriété 
+d'un élément DOM à un champ qui est une propriété définie 
+dans le code TypeScript de notre composant.
+
+Par exemple:
+Fichier  typeScript                             Html  
+  imgUrl="image.jped"                           <img [src] = "imgUrl" />
+
+Event Binding
+La liaison d'événement est utilisée 
+pour gérer les événements déclenchés depuis le DOM 
+comme le clic de bouton, le déplacement de la souris, etc. 
+Lorsque l'événement DOM se produit (par exemple, cliquez, changez, touchez), 
+il appelle la méthode spécifiée dans le composant. 
+Dans l'exemple suivant, la méthode cookBacon () du composant est appelée 
+lorsque l'utilisateur clique sur le bout
+
+Par exemple:
+Fichier  typeScript                             Html  
+ cookBacon (){
+                                                < button  (click) = "cookBacon ()" > </ bouton >  
+ }
+
+ Two Way Binding
+
+ Nous avons vu que dans la liaison de données à sens unique, 
+ tout changement dans le modèle (vue) n'était pas reflété 
+ dans le code TypeScript du composant. Pour résoudre ce problème, 
+ Angular fournit une liaison de données bidirectionnelle.
+  La liaison bidirectionnelle a une fonction pour mettre à jour les données d'un composant à l'autre 
+  et vice-versa.
+
+Dans les deux sens, la liaison de données, 
+la liaison de propriété et la liaison d'événement sont combinées.
+
+Par exemple:
+Fichier  typeScript                             Html 
+   data:type                                    [(ngModel)] = "[data]"  
+
+NB:
+Remarque: pour la liaison de données bidirectionnelle, 
+nous devons activer la directive ngModel. Cela dépend de FormsModule dans le package angular / forms,
+ nous devons donc ajouter FormsModule dans le tableau importations [] de l'AppModule
+

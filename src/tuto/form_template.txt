@@ -1,0 +1,71 @@
+Form Template
+Créez un formulaire avec un composant et un modèle.
+Utilisez le  ngModel pour créer des liaisons de données bidirectionnelles pour la lecture et l'écriture de valeurs de contrôle d'entrée.
+Implémentez des commentaires visuels à l'aide de classes CSS spéciales qui suivent l'état des contrôles.
+Afficher les erreurs de validation aux utilisateurs et activer ou désactiver les contrôles de formulaire en fonction de l'état du formulaire.
+Partagez des informations entre les composants HTML à l'aide de  variables de référence de modèle .
+
+1)Activer  le Module  
+  app.module.ts 
+     import { FormsModule } from '@angular/forms';
+     imports: [
+   ...
+    FormsModule
+  ],
+
+  2) creation du Formulaire dans le Fichier HTML
+  Les formulaires basés sur des modèles dépendent des directives définies dans FormsModule.
+
+   a) La directive NgModel régule les changements de valeur dans l'élément de formulaire
+    joint avec les changements dans le modèle de données, vous permettant de répondre 
+    à l'entrée de l'utilisateur avec la validation d'entrée et la gestion des erreurs.
+   b) La directive NgForm crée une instance FormGroup de niveau supérieur et la lie 
+       à un élément <form> pour suivre la valeur du formulaire agrégé et l'état de validation. 
+      Dès que vous importez FormsModule, cette directive devient active par défaut sur toutes 
+      les balises <form>. Vous n'avez pas besoin d'ajouter un sélecteur particulier.
+
+   c) La directive NgModelGroup crée et lie une instance FormGroup à un élément DOM.
+
+   Exemple:
+   Fichier  Component ts
+            ...
+            export class AppComponent implements OnInit {
+            formData: any = {};//Declaration du Modele de Formulaire
+            constructor() {
+            }
+            ...
+
+Fichier HTML
+ a)Form
+  <form #addTechnologyForm="ngForm">
+  b)Gestion d'un element
+        <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text"
+                        class="form-control"
+                        [(ngModel)]="formData.name"
+                            #username="ngModel"
+                        required />
+        </div>
+
+c)Validation des Champ
+    Etat	                               Classe si vrai	       Classe si faux
+    Le contrôle a été visité.	            ng-touched          	ng-untouched
+    La valeur du contrôle a changé.     	ng-dirty	            ng-pristine
+    La valeur du contrôle est valide.	    ng-valid	            ng-invalid
+
+    <div *ngIf="username.invalid && (username.dirty || username.touched)"
+        class="alert alert-danger">
+    <div *ngIf="username.errors.required">
+                Username is required
+    </div>
+    </div>
+
+ d)Desactivation  du button
+    <button 
+        type="submit" 
+        class="btn btn-warning"
+        [disabled] = "!registerForm.form.valid"
+        (click)="register()">
+              Register
+    </button>

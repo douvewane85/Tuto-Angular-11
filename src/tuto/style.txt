@@ -1,0 +1,8 @@
+//Integration de Bootstrap
+   npm install bootstrap --save
+
+ Angular.json et ajoutez le chemin d'accès au Framework CSS Bootstrap.
+"styles": [
+  "src/styles.css",
+   "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+],

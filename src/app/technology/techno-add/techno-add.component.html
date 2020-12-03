@@ -1,1 +1,87 @@
-<p>Add Une Techologie</p>
+
+
+<div class="container">
+    <h1 class="display-5  my-2 ml-5  justify-content-center">  Enregistrement d'une Techonologie</h1>
+    <form #addTechnologyForm="ngForm">
+        <div class="form-group row">
+            <label for="inputName" class="col-sm-2 col-form-label">Libelle</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" 
+                 name="libelle" id="libelle" 
+                [(ngModel)]="formData.libelle"
+                 #libelle="ngModel"
+                  required >
+
+                  <small id="" 
+                  *ngIf="libelle.invalid &&
+                   (libelle.dirty || libelle.touched)" 
+                   class="text-danger"> 
+                    <span  *ngIf="libelle.errors.required">
+                        Le Libelle est Obligatoire
+                    </span>
+                   
+                </small>
+            </div>
+           
+        </div>
+        <div class="form-group row">
+            <label for="inputName" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-6">
+               
+                <textarea class="form-control" rows="3"
+                    name="description" id="description" 
+                    [(ngModel)]="formData.description"
+                    #description="ngModel"
+                    required >
+                </textarea>
+                  <small id="" 
+                  *ngIf="description.invalid &&
+                   (description.dirty || description.touched)" 
+                   class="text-danger"> 
+                    <span  *ngIf="description.errors.required">
+                        La Description est Obligatoire
+                    </span>
+                   
+                </small>
+            </div>
+           
+        </div>
+
+        <div class="form-group row">
+            <label for="inputName" class="col-sm-2 col-form-label">Type</label>
+            <div class="col-sm-6">
+                <select class="form-control" name="" id="" 
+                name="type" id="type" 
+                [(ngModel)]="formData.type"
+                #type="ngModel"
+                required >
+                    <option></option>
+
+                   <option *ngFor="let type of types" [value]="type">{{type.libelle}}</option>
+                </select>
+                  <small id="" 
+                  *ngIf="type.invalid &&
+                   (type.dirty || type.touched)" 
+                   class="text-danger"> 
+                    <span  *ngIf="type.errors.required">
+                        Veuillez selectionner au moins un Type
+                    </span>
+                   
+                </small>
+            </div>
+           
+        </div>
+
+
+        <div class="form-group row ">
+            <div class="offset-sm-7 ">
+                <button type="submit" 
+                class="btn btn-primary"
+                [disabled] = "!addTechnologyForm.form.valid"
+                (click)="handleAdd()">
+                  Add
+               </button>
+            </div>
+        </div>
+    </form>
+</div>
